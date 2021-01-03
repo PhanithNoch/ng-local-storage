@@ -8,7 +8,12 @@ import { EntertainmentComponent } from './entertainment/entertainment.component'
 import { TechnologyComponent } from './technology/technology.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ErrorComponent } from './error/error.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { ValidationAppComponent } from './validation-app/validation-app.component';
+import { LocalDataComponent } from './local-data/local-data.component';
+import {HttpClientModule} from '@angular/common/http';
+import { ApiServiceService } from './shared/services/api-service.service';
+import { EntertainmentDetailComponent } from './entertainment-detail/entertainment-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,12 +21,18 @@ import {FormsModule} from '@angular/forms';
     EntertainmentComponent,
     TechnologyComponent,
     HomePageComponent,
-    ErrorComponent
+    ErrorComponent,
+    ValidationAppComponent,
+    LocalDataComponent,
+    EntertainmentDetailComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

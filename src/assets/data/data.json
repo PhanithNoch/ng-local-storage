@@ -1,0 +1,12 @@
+{
+    "data":[
+        {
+            "name":"apple developer","salary":"2100"
+        },
+        {
+            "name":"samsung developer","salary":"22222"
+        }
+    ],
+    "status":"success",
+    "total_record":2
+}

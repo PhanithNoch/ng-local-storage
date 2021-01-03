@@ -9,6 +9,8 @@ export class HomePageComponent implements OnInit {
 
   lstProduct: any = []; //created for loop in view(UI) 
   lstLocalStorage:any = [];
+  activeIndex:number;
+  
 
   objProduct: any = {
     name: "",
@@ -29,15 +31,50 @@ export class HomePageComponent implements OnInit {
   }
 
   onSaveProduct() {
+
     this.lstLocalStorage = [];
     this.lstLocalStorage = this.lstProduct;
     this.lstLocalStorage.push(this.objProduct);
     localStorage.setItem("$product", JSON.stringify(this.lstLocalStorage));
+    this.objProduct = {};
   }
 
+  // for delete the data 
   onDelete(index: number) {
-    console.log(index);
+   
+      console.log(index);
+      this.lstProduct.splice(index,1);
+      console.log(this.lstProduct);
+      localStorage.clear();
+      localStorage.setItem("$product", JSON.stringify(this.lstProduct));
+    
+    
+    
+  }
 
-    this.lstProduct.splice(index);
+  onEdit(product,index)
+  {
+    this.activeIndex = index;
+  this.objProduct = {};
+    console.log(product);
+    this.objProduct = product;
+  }
+
+  onUpdate()
+  {
+    let index = this.lstProduct.indexOf(this.objProduct); // 
+    console.log(index);
+    if (index > -1) {
+        this.lstProduct.splice(index, 1);
+        this.lstProduct.push(this.objProduct);
+        localStorage.clear();
+           localStorage.setItem("$product", JSON.stringify(this.lstProduct));
+    }
+  //   console.log(this.activeIndex);
+  //  let removed =  this.lstProduct.splice(this.activeIndex); //delete item by index 
+  //  console.log(removed);
+  //   console.log(this.lstProduct);
+  //   localStorage.clear();
+  //   localStorage.setItem("$product", JSON.stringify(this.lstProduct));
   }
 }
