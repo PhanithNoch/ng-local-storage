@@ -1,0 +1,16 @@
+
+.side-bar
+{
+  
+    height: 100vh;
+    background-color:rgb(241, 238, 238);
+    display: inline;
+    
+}
+
+.side-bar img{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}

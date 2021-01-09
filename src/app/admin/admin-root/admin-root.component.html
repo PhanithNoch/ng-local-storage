@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-md-2">
+    <section class="side-bar"  >
+      <div class="row">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcyWUxDCRCf3MkdbBP8YjbCshKCgcZ7ICskQ&usqp=CAU"
+          alt=""
+        />
+      </div>
+      <div class="row">
+        <div style="margin: auto" class="text-info text-bold">Admin</div>
+      </div>
+
+      <div class="row  mt-5">
+          <div class="col-md-12 bg-primary  mb-3" >
+              <a [routerLink]="['/admin/home-content']" routerLinkActive="router-link-active"  class="text-white text-uppercase text-center">Home Cotent</a>
+          </div>
+          <div class="col-md-12  " >
+            <a [routerLink]="['/admin/user']" routerLinkActive="router-link-active"  class="text-dark text-uppercase text-center">User</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="col-md-10 p-0">
+   <router-outlet></router-outlet>
+  </div>
+</div>
